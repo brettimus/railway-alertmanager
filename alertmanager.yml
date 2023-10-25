@@ -1,0 +1,14 @@
+global:
+  resolve_timeout: 5m
+route:
+  group_by: ['alertname', 'cluster', 'service']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  receiver: 'slack-notifications'
+receivers:
+- name: 'slack-notifications'
+  slack_configs:
+  - send_resolved: true
+    text: "<!channel> \n{{ range .Alerts }}\n*Alert:* {{ .Annotations.summary }}\n*Description:* {{ .Annotations.description }}\n*Details:* <{{ .GeneratorURL }}|:link:> \n{{ end }}"
+    api_url: 'YOUR_SLACK_WEBHOOK_URL'
