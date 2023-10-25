@@ -16,4 +16,4 @@ receivers:
 - name: 'autometrics-slack-app'
   webhook_configs:
   - send_resolved: true
-    url: 'autometrics-slack-app.railway.internal/api/alerts'
+    url: 'autometrics-slack-app-production.up.railway.app/api/alerts'
