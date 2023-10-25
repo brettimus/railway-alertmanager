@@ -1,4 +1,4 @@
 FROM prom/alertmanager:v0.23.0
-ADD prometheus.yml /etc/prometheus/
+ADD alertmanager.yml /config
 EXPOSE 9093
 USER root
