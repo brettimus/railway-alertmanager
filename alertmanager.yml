@@ -5,7 +5,7 @@ route:
   group_wait: 30s
   group_interval: 5m
   repeat_interval: 3h
-  receiver: 'slack-notifications'
+  receiver: 'autometrics-slack-app'
 # receivers:
 # - name: 'slack-notifications'
 #   slack_configs:
@@ -16,5 +16,5 @@ receivers:
 - name: 'autometrics-slack-app'
   webhook_configs:
   - send_resolved: true
-    url: 'http://your-service-url/your-endpoint'
+    url: 'railway-autometrics-slack-app.railway.internal/api/alerts'
 
