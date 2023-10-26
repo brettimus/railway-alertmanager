@@ -6,12 +6,6 @@ route:
   group_interval: 1m # NOTE - artifically low for testing purposes
   repeat_interval: 5m # NOTE - artifically low for testing purposes
   receiver: 'autometrics-slack-app'
-# receivers:
-# - name: 'slack-notifications'
-#   slack_configs:
-#   - send_resolved: true
-#     text: "<!channel> \n{{ range .Alerts }}\n*Alert:* {{ .Annotations.summary }}\n*Description:* {{ .Annotations.description }}\n*Details:* <{{ .GeneratorURL }}|:link:> \n{{ end }}"
-#     api_url: 'YOUR_SLACK_WEBHOOK_URL'
 receivers:
 - name: 'autometrics-slack-app'
   webhook_configs:
