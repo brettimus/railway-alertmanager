@@ -6,6 +6,7 @@ route:
   group_interval: 1m # NOTE - artifically low for testing purposes
   repeat_interval: 5m # NOTE - artifically low for testing purposes
   receiver: 'autometrics-slack-app'
+
 receivers:
 - name: 'autometrics-slack-app'
   webhook_configs:
