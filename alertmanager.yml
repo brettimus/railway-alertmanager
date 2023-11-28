@@ -1,6 +1,7 @@
 global:
   resolve_timeout: 5m
 route:
+  receiver: 'autometrics-slack-app'
   group_by: ['alertname', 'cluster', 'service']
   group_wait: 10s
   group_interval: 1m # NOTE - artifically low for testing purposes
