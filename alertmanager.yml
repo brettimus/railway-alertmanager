@@ -9,6 +9,8 @@ route:
   routes:
     - receiver: 'autometrics-slack-app'
       continue: true # This ensures that the alerting continues to the next route
+    - receiver: 'pagerduty-integration-demo'
+      continue: true # This ensures that the alerting continues to the next route
     - receiver: 'lau-autometrics-slack-app'
 
 receivers:
@@ -21,3 +23,7 @@ receivers:
   webhook_configs:
   - send_resolved: true
     url: 'https://p01--slackbot--ydb8zv8zls59.code.run/api/alerts'
+
+- name: 'pagerduty-integration-demo'
+  pagerduty_configs:
+  - service_key: $PAGERDUTY_SERVICE_KEY
